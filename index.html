@@ -11,6 +11,9 @@
     <title>GitFav</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/star.svg" type="image/x-icon">
+    <script src="/js/main.js" type="module" defer></script>
+
 </head>
 
 <body>
@@ -39,47 +42,17 @@
                 </tr>
             </thead>
 
-
-            <tbody class="hide">
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/vinizbjj.png" alt="">
-                        <a href="">
-                            <p>Vinizbjj</p>
-                            <span>/Vinizbjj</span>
-                        </a>
-                    </td>
-                    <td class="repositories">123</td>
-                    <td class="followers">1234</td>
-                    <td>
-                        <button class="remove">Remove</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/vinizbjj.png" alt="">
-                        <a href="">
-                            <p>Vinizbjj</p>
-                            <span>/Vinizbjj</span>
-                        </a>
-                    </td>
-                    <td class="repositories">123</td>
-                    <td class="followers">1234</td>
-                    <td>
-                        <button class="remove">Remove</button>
-                    </td>
-                </tr>
-
-
+            <tbody>
             </tbody>
 
         </table>
-        <div class="container">
-            <p></p>
-
+        <div class="container" id="hide">
+            <img src="./assets/smileStar.svg" alt="">
+            <h1> Nenhum favorito ainda</h1>
         </div>
     </div>
+
+
 </body>
 
 </html>

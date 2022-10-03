@@ -19,6 +19,7 @@
     --input-text: #7C7C8A;
     --btninput-color: white;
     --btn-remove: #F75A68;
+    --body-text: #4E5455;
 
 }
 
@@ -188,9 +189,27 @@ td .remove {
     display: none;
 }
 
+#hide{
+    display: none;
+}
+
 .container {
+    display: flex;
     min-width: 100%;
     min-height: 62.4rem;
     background-color: var(--input-color);
-    border: 1px solid var(--primary-color) 
+    border: 1px solid var(--primary-color);
+    align-items: center;
+    justify-content: center;
+    gap: 5rem
+    
+}
+
+.container h1{
+    color: var(--body-text);
+    font-weight: bold;
+    font-size: 4rem;
+    margin-top: 2rem;
+
+
 }
