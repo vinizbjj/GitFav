@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff-primary: 'Poppins', sans-serif;
+    --text-color: #E1E1E6;
+    --bg-color: black;
+
+    --primary-color: #092D38;
+    --secondary-color: rgba(6, 22, 27, 0.5);
+    --third-color: #4A808C;
+    --btn-color: #065E7C;
+    --input-color: #06181C;
+    --input-text: #7C7C8A;
+    --btninput-color: white;
+    --btn-remove: #F75A68;
+
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+body * {
+    font-family: var(--ff-primary);
+
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.btn-search {
+    display: flex;
+    min-width: 17rem;
+    min-height: 4.8rem;
+    background-color: var(--btn-color);
+    border-radius: .5rem;
+    color: var(--btninput-color);
+    align-items: center;
+    gap: .8rem;
+    padding-left: 3.2rem;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: var(--btninput-color);
+    color: var(--btn-color);
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 4.8rem;
+
+    margin: 8.7rem 0;
+}
+
+.header-icon {
+    font-family: var(--ff-primary);
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    max-height: 2.4rem;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 2.7rem;
+}
+
+#input-search {
+    background-color: var(--input-color);
+    border-style: none;
+    color: var(--input-text);
+    min-width: 46.2rem;
+    min-height: 4.8rem;
+    border-radius: .5rem;
+
+
+}
+
+#search {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 1.2rem;
+    
+
+}
+
+table * {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+table th {
+    background-color: var(--primary-color);
+    text-align: left;
+    font-weight: bold;
+    padding: 1.5rem;
+}
+
+
+
+table th:first-child {
+    border-top-left-radius: .4rem;
+}
+
+table th:last-child {
+    border-top-right-radius: .4rem;
+}
+
+table tr:nth-child(odd) {
+    background: var(--secondary-color);
+}
+
+table tr {
+    background: var(--input-color)
+}
+
+table td {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a p {
+    font-weight: bold;
+}
+
+td.user img {
+    width: 5rem;
+    height: 5rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td .remove {
+    background: none;
+    border: none;
+    color: var(--btn-remove);
+    cursor: pointer;
+}
+
+
+.hide {
+    display: none;
+}
+
+.container {
+    min-width: 100%;
+    min-height: 62.4rem;
+    background-color: var(--input-color);
+    border: 1px solid var(--primary-color) 
+}
