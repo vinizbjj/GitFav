@@ -1,19 +1,4 @@
-export class GithubUser {
-    static search(username) {
-        const endpoint = `https://api.github.com/users/${username}`
-
-        return fetch(endpoint)
-            .then(data => data.json())
-            .then(
-                ({ login, name, public_repos, followers }) => (
-                    {
-                        login,
-                        name,
-                        public_repos,
-                        followers,
-                    }))
-    }
-}
+import { GithubUser } from "./GitHubUser.js"
 
 export class Favorites {
     constructor(root) {
@@ -28,10 +13,31 @@ export class Favorites {
 
     }
 
-    async add(username) {
-        const user = await GithubUser.search(username)
+    save() {
+        localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
     }
 
+    async add(username) {
+        try {
+
+            const userExists = this.entries.find(entry => entry.login === username)
+            if (userExists) {
+                throw new Error('Usuário já cadastrado')
+            }
+
+            const user = await GithubUser.search(username)
+
+            if (user.login === undefined) {
+                throw new Error('User not found!')
+            }
+            this.entries = [user, ...this.entries]
+            this.update()
+            this.save()
+
+        } catch (error) {
+            alert(error.message)
+        }
+    }
 
     delete(user) {
         const filteresEntries = this.entries.filter(entry =>
@@ -39,17 +45,7 @@ export class Favorites {
 
         this.entries = filteresEntries
         this.update()
-        this.onadd()
-
-    }
-
-    onadd() {
-        const addButton = this.root.querySelector('.search button')
-        addButton.onclick = () => {
-            const { value } = this.root.querySelector('.search input')
-
-            this.add(value)
-        }
+        this.save()
     }
 }
 
@@ -61,10 +57,23 @@ export class FavoritesView extends Favorites {
         this.tbody = this.root.querySelector('table tbody')
 
         this.update()
+        this.onadd()
+    }
+
+    onadd() {
+
+        const addButton = this.root.querySelector('.btn-search')
+        addButton.onclick = () => {
+            const { value } = this.root.querySelector('#input-search')
+
+
+            this.add(value)
+        }
     }
 
     update() {
 
+        this.emptyList()
         this.removeAllTr()
 
         this.entries.forEach(user => {
@@ -120,4 +129,17 @@ export class FavoritesView extends Favorites {
                 tr.remove()
             })
     }
+
+    emptyList() {
+        const container = document.getElementById("und");
+        const entriesIsEmpty = this.entries.length >= 1;
+        if (entriesIsEmpty) {
+            container.style.display = "none";
+
+            return;
+        }else{
+            container.style.display = "flex";
+        }
+    }
+
 }

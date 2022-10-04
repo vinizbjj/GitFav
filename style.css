@@ -50,6 +50,7 @@ body * {
     max-width: 1120px;
     margin: 0 auto;
     padding: 2rem;
+
 }
 
 .btn-search {
@@ -111,12 +112,17 @@ header h1 {
 }
 
 table {
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    
     border-collapse: collapse;
     border-radius: 1.2rem;
+
+
     
 
 }
+
 
 table * {
     font-size: 1.4rem;
@@ -151,6 +157,7 @@ table tr {
 table td {
     padding: 1.5rem;
     text-align: left;
+    
 }
 
 td.user {
@@ -189,7 +196,7 @@ td .remove {
     display: none;
 }
 
-#hide{
+.hide{
     display: none;
 }
 
@@ -201,7 +208,7 @@ td .remove {
     border: 1px solid var(--primary-color);
     align-items: center;
     justify-content: center;
-    gap: 5rem
+    gap: 5rem;
     
 }
 
@@ -212,4 +219,8 @@ td .remove {
     margin-top: 2rem;
 
 
+}
+
+.row1{
+    width: 70rem;
 }
