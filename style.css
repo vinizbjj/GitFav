@@ -114,13 +114,9 @@ header h1 {
 table {
     min-width: 100%;
     min-height: 100%;
-    
+
     border-collapse: collapse;
     border-radius: 1.2rem;
-
-
-    
-
 }
 
 
@@ -157,14 +153,14 @@ table tr {
 table td {
     padding: 1.5rem;
     text-align: left;
-    
+
 }
 
 td.user {
     display: flex;
     align-items: center;
     gap: 1rem;
-    
+
 }
 
 
@@ -196,7 +192,7 @@ td .remove {
     display: none;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
@@ -209,18 +205,39 @@ td .remove {
     align-items: center;
     justify-content: center;
     gap: 5rem;
-    
+
 }
 
-.container h1{
+.container h1 {
     color: var(--body-text);
     font-weight: bold;
     font-size: 4rem;
     margin-top: 2rem;
-
-
 }
 
-.row1{
+.row1 {
     width: 70rem;
 }
+
+.container-table {
+    overflow-y: auto;
+    max-width: 112rem;
+    max-height: 68.8rem;
+
+    border: 1px solid var(--third-color);
+    border-radius: 1.2rem;
+}
+
+.container-table::-webkit-scrollbar{
+    width: .6rem;
+}
+
+.container-table::-webkit-scrollbar-track {
+    background: none;        /* color of the tracking area */
+  }
+
+  .container-table::-webkit-scrollbar-thumb {
+    background-color: var(--third-color);   
+    border-radius: 1rem;      
+
+  }
